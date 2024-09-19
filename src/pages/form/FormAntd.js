@@ -1,9 +1,14 @@
-import React from "react";
-import { Button, Form, Input } from "antd";
+import React, { useState } from "react";
+import { Button, Form, Input, Alert } from "antd";
 import { LoginOutlined } from "@ant-design/icons";
-import "bootstrap/dist/css/bootstrap.min.css"; // Ensure Bootstrap is imported
 
 const FormAntd = () => {
+  const [isLogin, setIsLogin] = useState(false);
+  const logErr = () => {
+    setTimeout(() => {
+      setIsLogin(true);
+    }, 1000);
+  };
   return (
     <div className="d-flex justify-content-center align-items-center vh-100 vw-100">
       <Form
@@ -11,8 +16,16 @@ const FormAntd = () => {
         name="loginform"
         initialValues={{ remember: true }}
         style={{ width: "400px" }}
+        onFinish={logErr}
       >
         <h1>Login Form</h1>
+        {isLogin && (
+          <Alert
+            type="error"
+            message="Error hx please try again...............!"
+          />
+        )}
+
         <Form.Item
           label="Username"
           name="username"

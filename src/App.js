@@ -7,6 +7,7 @@ import FormAntd from "./pages/form/FormAntd";
 import InputAntd from "./pages/baiscs/InputAntd";
 import SignupForm from "./pages/form/SignupForm ";
 import Icons from "./pages/baiscs/Icons";
+import AntdMenu from "./pages/baiscs/AntdMenu";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/antinput" element={<InputAntd />} />
         <Route path="/sign" element={<SignupForm />} />
         <Route path="/icon" element={<Icons />} />
+        <Route path="/menu" element={<AntdMenu />} />
       </Routes>
     </BrowserRouter>
   );
